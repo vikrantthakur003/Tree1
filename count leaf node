@@ -1,0 +1,24 @@
+// this only count leaf node program
+
+void preorder(node* root,int count){
+
+if(root==NULL){
+return;
+}
+ preorder(root->left);
+ 
+ if(root->left==NULL && root->right==NULL){
+ count++;
+ }
+ 
+ preorder(root->right);
+ 
+ }
+ 
+ // this is another method for count the leaf node
+ 
+ node* countleaf(node* root){
+ int count = 0;
+ preorder(root,count);
+ return count;
+ }
